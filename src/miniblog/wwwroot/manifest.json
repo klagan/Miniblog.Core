@@ -1,7 +1,7 @@
 {
-  "name": "Miniblog.Core",
-  "short_name": "Miniblog.Core",
-  "description": "A short description of the blog.",
+  "name": "my blog();",
+  "short_name": "my blog();",
+  "description": "my blog",
   "icons": [
     {
       "src": "/img/icon192x192.png",

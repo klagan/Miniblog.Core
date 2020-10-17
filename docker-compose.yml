@@ -1,0 +1,43 @@
+version: "3.3"
+services:
+  proxy:
+    build:
+      context: src/proxy
+    image: local/proxyblog
+    container_name: proxyblog
+    ports:
+      - "80:8080"
+      - "8080:8080"
+    restart: always
+    depends_on:
+      - web
+    networks:
+      - webnet
+
+  web:
+    build:
+      context: src/miniblog
+    image: local/myblog
+    container_name: myblog
+    restart: always
+    volumes:
+      - type: volume
+        source: myposts
+        target: /posts
+        volume:
+          nocopy: true
+#      - type: bind
+#        source: ./static
+#        target: /opt/app/static
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8081    
+    networks:
+      - webnet
+
+volumes:
+  myposts:
+
+networks:
+  webnet:
+    driver: bridge
