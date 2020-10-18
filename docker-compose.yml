@@ -21,14 +21,7 @@ services:
     container_name: myblog
     restart: always
     volumes:
-      - type: volume
-        source: myposts
-        target: /posts
-        volume:
-          nocopy: true
-#      - type: bind
-#        source: ./static
-#        target: /opt/app/static
+      - myposts:/app/wwwroot/Posts
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:8081    
@@ -36,7 +29,7 @@ services:
       - webnet
 
 volumes:
-  myposts:
+  myposts:       
 
 networks:
   webnet:
