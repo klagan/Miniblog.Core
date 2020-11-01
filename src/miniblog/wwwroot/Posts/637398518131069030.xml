@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<post>
+  <title>test of a new post</title>
+  <slug>test-post</slug>
+  <pubDate>2020-11-01T18:24:02.252Z</pubDate>
+  <lastModified>2020-11-01T18:24:02.276Z</lastModified>
+  <excerpt>this is a test post</excerpt>
+  <content>&lt;p&gt;just testing that i can post&lt;/p&gt;</content>
+  <ispublished>true</ispublished>
+  <categories>
+    <category>test</category>
+  </categories>
+  <comments></comments>
+</post>
