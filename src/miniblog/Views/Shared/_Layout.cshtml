@@ -69,7 +69,10 @@
                         }
                         else
                         {
-                            <li><a href="~/login/?returnUrl=@path" rel="nofollow" title="@Miniblog.Core.Properties.Resources.SignInAsAdministrator">@Miniblog.Core.Properties.Resources.SignIn</a></li>
+                             if (Context.Request.Host.Host == "localhost")
+                             {
+                                <li><a href="~/login/?returnUrl=@path" rel="nofollow" title="@Miniblog.Core.Properties.Resources.SignInAsAdministrator">@Miniblog.Core.Properties.Resources.SignIn</a></li>
+                             }
                         }
                     }
                 </ul>
